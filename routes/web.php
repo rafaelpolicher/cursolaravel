@@ -28,3 +28,7 @@ Route::any('/any', function(){
 Route::match(['get', 'post'], '/match', function(){
     return "Permite apenas acessos definidos";
 });
+
+Route::get('/produto/{id}/{cat?}', function($id, $cat = ""){
+    return "o id do produto é: " . $id . "<br>". "a categora é: " . $cat;
+});
