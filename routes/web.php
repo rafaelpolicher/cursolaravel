@@ -17,9 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/empresa', function(){
-    return view('site/empresa');
-});
+//Route::get('/empresa', function(){
+//    return view('site/empresa');
+//});
+Route::view('/empresa', 'site/empresa');
 
 Route::any('/any', function(){
     return "Permite todo tipo de acesso HTTP( put, get, delete, post)";
@@ -32,3 +33,8 @@ Route::match(['get', 'post'], '/match', function(){
 Route::get('/produto/{id}/{cat?}', function($id, $cat = ""){
     return "o id do produto é: " . $id . "<br>". "a categora é: " . $cat;
 });
+
+//Route::get('/sobre', function(){
+//    return redirect('/empresa');
+//});
+Route::redirect('/sobre', 'empresa');
