@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('nome');
             $table->text('descricao');
             $table->double('preco', 10, 2);
-            $table->string('slug');//titulo para URL
-            $table->string('imagem');
+            $table->string('slug'); //titulo para URL
+            $table->string('imagem')->nullable();
+
             //chave estrangeira
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
@@ -25,7 +26,7 @@ return new class extends Migration
             $table->unsignedBigInteger('categoria');
             $table->foreign('categoria')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->timestamps();// cria duas colunas, created e updated
+            $table->timestamps(); // cria duas colunas, created e updated
         });
     }
 
