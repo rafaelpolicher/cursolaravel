@@ -49,4 +49,27 @@
 @guest
     nao existe usuario autenticado
 @endguest
+<br><br>
+
+{{--estruturas de repetiçao--}}
+<h3>estruturas de repetiçao</h3>
+
+
+@for ($i=1; $i < 4; $i++)
+    valor atual for é {{$i}}<br>
+@endfor
+<br>
+
+@php
+    $y = 1
+@endphp
+@while ($y < 4)
+    valor atual while é {{$y}}<br>
+    @php $y++ @endphp
+@endwhile
+<br>
+
+@foreach ($frutas as $fruta)
+    {{$fruta}} foreach<br>
+@endforeach
 @endsection
