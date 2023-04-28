@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
+    
     @yield('conteudo')
     
 </body>
