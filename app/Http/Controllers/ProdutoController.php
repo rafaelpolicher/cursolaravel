@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+//use resources\views\site\news.blade.php;
 
 
 class ProdutoController extends Controller
@@ -13,11 +14,20 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        return 'index';
+        //return 'index';
 
         //mapeia automaticamente uma tabela do db para uma classe, nesse caso o model Produto representa a tabela produtos
         //$produtps = App\Models\Produto::all();
         //return dd($produtos)
+
+        $nome = 'Rafael';
+        $idade = '27';
+        $html = "<h1>Ola eu sou html</h1>";
+
+        //return view('news', );
+
+        //para passar variaveis para outras views {ver empresa.blade.php}
+        return view('site/empresa', compact('nome', 'idade', 'html'));
     }
 
     /**
