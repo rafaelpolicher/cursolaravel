@@ -23,8 +23,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->unsignedBigInteger('categoria');
-            $table->foreign('categoria')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('id_categoria');
+            $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps(); // cria duas colunas, created e updated
         });
