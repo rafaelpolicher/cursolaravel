@@ -27,7 +27,7 @@ class ProdutoController extends Controller
         //return view('news', );
 
         //para passar variaveis para outras views {ver empresa.blade.php}
-        return view('site/empresa', compact('nome', 'idade', 'html'));
+        return view('site/home', compact('nome', 'idade', 'html'));
     }
 
     /**
