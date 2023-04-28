@@ -72,4 +72,15 @@
 @foreach ($frutas as $fruta)
     {{$fruta}} foreach<br>
 @endforeach
+<br><br>
+
+@include('includes/mensagem', [
+    'titulo' => 'Menssagem de sucesso'
+    ])
+
+@component('components/sidebar')
+    @slot('paragrafo')
+        texto qualquer dinamico vindo de slot
+    @endslot
+@endcomponent
 @endsection
