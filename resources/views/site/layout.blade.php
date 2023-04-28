@@ -14,6 +14,8 @@
     <br><br><br><br>
     
     @yield('conteudo')
-    
+
+    @stack('script')
+
 </body>
 </html>
