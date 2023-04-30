@@ -17,18 +17,15 @@ class ProdutoController extends Controller
         //return 'index';
 
         //mapeia automaticamente uma tabela do db para uma classe, nesse caso o model Produto representa a tabela produtos
-        //$produtps = App\Models\Produto::all();
         //return dd($produtos)
 
-        $nome = 'Rafael';
-        $idade = '27';
-        $html = "<h1>Ola eu sou html</h1>";
-        $frutas = ['banana', 'laranja', 'maça'];
+        $produtos = Produto::all();
+
 
         //return view('news', );
 
         //para passar variaveis para outras views {ver empresa.blade.php}
-        return view('site/home', compact('nome', 'idade', 'html', 'frutas'));
+        return view('site/home', compact('produtos'));
     }
 
     /**
