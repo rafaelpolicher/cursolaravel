@@ -9,5 +9,14 @@ class Produto extends Model
 {
     use HasFactory;
 
-    //protected $table = 'produtos'
+    protected $table = 'produtos';
+
+    //retornara o usuario que esse roduto pertence
+    public function user(){
+        return $this->belongsTo(User::class, 'id_user');
+    }
+
+    public function categoria(){
+        return $this->belongsTo(Categoria::class, 'id_categoria');
+    }
 }

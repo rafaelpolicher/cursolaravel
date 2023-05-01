@@ -11,6 +11,8 @@
     <div class="col s12 m6">
         <h1>{{$produto->nome}}</h1>
         <p>{{$produto->descricao}}</p>
+        <p> Postado por: {{$produto->user->firstname}}</p>
+        <p> Categoria: {{$produto->categoria->nome}}</p>
         <button class="btn orange btn-large"> Comprar </button>
     </div>
 </div>
