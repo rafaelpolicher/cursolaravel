@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use App\Models\Categoria;
 
 class SiteController extends Controller
 {
@@ -18,8 +19,9 @@ class SiteController extends Controller
     }
 
     public function categoria($id){ 
+        $categoria = Categoria::find($id);//consegue buscar a categoria pelo id
         $produtos = Produto::where('id_categoria', $id)->paginate(3);
-        return view('site/categoria', compact('produtos'));
+        return view('site/categoria', compact('produtos', 'categoria'));
     }
 
 }
