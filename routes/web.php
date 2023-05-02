@@ -16,7 +16,7 @@ Route::get('/categoria/{id}', [SiteController::class, 'categoria'])->name('site.
 Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('site.carrinho');
 Route::post('/carrinho', [CarrinhoController::class, 'adicionaCarrinho'])->name('site.addcarrinho');
 
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard')->middleware('auth');
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard')->middleware(['auth', 'checkemail']);
 
 Route::view('/login', 'login.form')->name('login.form');
 Route::post('/auth', [LoginController::class, 'auth'])->name('login.auth');
