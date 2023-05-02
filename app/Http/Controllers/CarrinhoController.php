@@ -12,12 +12,12 @@ class CarrinhoController extends Controller
     }
 
     public function adicionaCarrinho(Request $request){
-        \Cart::add(array(
+        \Cart::add([
             'id' => $request->id,
             'name' => $request->name,
             'price' => $request->price,
             'quantity' => $request->quantity,
             'attributes' => array('image' => $request->img)
-        ));
+        ]);
     }
 }
