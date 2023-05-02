@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\CarrinhoController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 
 Route::resource('produtos', ProdutoController::class);
@@ -15,6 +16,7 @@ Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('sit
 Route::post('/carrinho', [CarrinhoController::class, 'adicionaCarrinho'])->name('site.addcarrinho');
 Route::view('/login', 'login.form')->name('login.form');
 Route::post('/auth', [LoginController::class, 'auth'])->name('login.auth');
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 /*
 Route::get('/', function () {
     return redirect()->route('admin.clientes');
