@@ -27,6 +27,11 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 
 Route::get('/register', [LoginController::class, 'create'])->name('login.create');
 
+Route::get('/admin/produtos', function(){
+    return view('admin.produtos');
+})->name('admin.produtos');
+
+
 /*
 Route::get('/', function () {
     return redirect()->route('admin.clientes');
