@@ -20,12 +20,13 @@ class ProdutoController extends Controller
         //return dd($produtos)
 
         $produtos = Produto::paginate(6);
-
+        $produtos = Produto::all();
+        return view('admin.produtos', compact('produtos'));
 
         //return view('news', );
 
         //para passar variaveis para outras views {ver empresa.blade.php}
-        return view('site/home', compact('produtos'));
+        //return view('site/home', compact('produtos'));
     }
 
     /**
