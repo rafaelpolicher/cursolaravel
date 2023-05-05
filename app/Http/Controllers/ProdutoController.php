@@ -19,8 +19,8 @@ class ProdutoController extends Controller
         //mapeia automaticamente uma tabela do db para uma classe, nesse caso o model Produto representa a tabela produtos
         //return dd($produtos)
 
-        $produtos = Produto::paginate(6);
-        $produtos = Produto::all();
+        $produtos = Produto::paginate(10);
+        //$produtos = Produto::all();
         return view('admin.produtos', compact('produtos'));
 
         //return view('news', );
