@@ -10,7 +10,7 @@
   </div>
   @include('admin.produtos.create')
     <div class="row container crud">
-        
+
             <div class="row titulo ">              
               <h1 class="left">Produtos</h1>
               <span class="right chip">{{$produtos->count()}} produtos nesta página</span>  
@@ -29,6 +29,8 @@
           </nav>     
 
             <div class="card z-depth-4 registros" >
+              @include('admin.includes.mensagens')
+
             <table class="striped ">
                 <thead>
                   <tr>
