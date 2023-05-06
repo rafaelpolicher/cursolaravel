@@ -2,8 +2,10 @@
    <div id="create" class="modal">
     <div class="modal-content">
       <h4><i class="material-icons">playlist_add_circle</i> Novo produto</h4>
-      <form class="col s12" action="" method="POST" enctype="multipart/form-data">
+      <form class="col s12" action="{{route('admin.produto.store')}}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="row">
+            <input type="hidden" name="id_user" value="{{auth()->user()->id}}">
 
           <div class="input-field col s6">
             <input name="nome" placeholder="Nome" id="nome" type="text" class="validate">
@@ -20,7 +22,7 @@
           </div>
 
           <div class="input-field col s12">
-            <select name="categoria">
+            <select name="id_categoria">
               <option value="" disabled selected>Escolha uma opção</option>
               @foreach ($produtos as $produto)
                   <option value="{{$produto->categoria->id}}"> {{$produto->categoria->nome}}</option>
@@ -30,7 +32,6 @@
             <label>Categoria</label>
           </div>
           
-          <form action="#">
             <div class="file-field input-field col s12">
               <div class="btn">
                 <span>Imagem</span>
@@ -40,14 +41,11 @@
                 <input class="file-path validate" type="text">
               </div>
             </div>
-          </form>
-
         </div> 
        
-        <a href="#!" class="modal-close waves-effect waves-green btn blue right">Cancelar</a>
         <button type="submit" class="waves-effect waves-green btn green right">Cadastrar</button><br>
 
-    </div>
+        </div>
     
-  </form>
+    </form>
   </div>

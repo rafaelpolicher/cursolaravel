@@ -6,6 +6,7 @@
         {{$error}}<br>
     @endforeach
 @endif
+
 <form action="{{route('login.auth')}}" method="post">
     @csrf
     Email: <br><input  name="email"><br>
