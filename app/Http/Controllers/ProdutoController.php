@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 //use resources\views\site\news.blade.php;
@@ -20,8 +21,9 @@ class ProdutoController extends Controller
         //return dd($produtos)
 
         $produtos = Produto::paginate(10);
+        $categorias = Categoria::all();
         //$produtos = Produto::all();
-        return view('admin.produtos', compact('produtos'));
+        return view('admin.produtos', compact('produtos', 'categorias'));
 
         //return view('news', );
 
